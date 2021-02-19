@@ -14,7 +14,7 @@ class FilesCli < Formula
     sha256 "5df74f85d631ace44323d0e97f14f8d02e26345e2ec08ff59dad33c7e694b57d"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/Files-com/files-cli/releases/download//v1.0.209/files-cli_Linux_64bit.tar.gz"
+    url "https://github.com/Files-com/files-cli/releases/download/v1.0.209/files-cli_Linux_64bit.tar.gz"
     sha256 "32deef8c83d8f4e2a2d4bd24a2c0f50682675ddde5d63012ee8d24cb849a27f4"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
