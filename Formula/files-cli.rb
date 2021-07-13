@@ -5,25 +5,25 @@
 class FilesCli < Formula
   desc "Files.com command-line interface"
   homepage "https://files.com/"
-  version "1.0.1396"
+  version "1.0.1397"
   license "MIT"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/Files-com/files-cli/releases/download/v1.0.1396/files-cli_macOS_64bit.tar.gz"
-      sha256 "bdf4797e2fe09f50671290f44a03c7d03e8ff45469753c2bc6e68dc5685c7a15"
+      url "https://github.com/Files-com/files-cli/releases/download/v1.0.1397/files-cli_macOS_64bit.tar.gz"
+      sha256 "a4303d4b46efb948e23ff7891cd31b1835de8bdbc65567f910969e6be813cde2"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/Files-com/files-cli/releases/download/v1.0.1396/files-cli_Linux_64bit.tar.gz"
-      sha256 "a372e5305bf6125f90f2cb19539b7cb17d738bb7aeaa7d259726cca01f2596af"
+      url "https://github.com/Files-com/files-cli/releases/download/v1.0.1397/files-cli_Linux_64bit.tar.gz"
+      sha256 "fac0e083619e3a53e925c23b7ae31dc4e13eafc55daf4b3a6455749d3ea3fb42"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Files-com/files-cli/releases/download/v1.0.1396/files-cli_Linux_ARM64.tar.gz"
-      sha256 "934aa36e133962b9a688400a4aa0ed85fa5c6ebc15073b57c13a16c246e00f6d"
+      url "https://github.com/Files-com/files-cli/releases/download/v1.0.1397/files-cli_Linux_ARM64.tar.gz"
+      sha256 "444a1d1c03a5d03ed7636404390fa9e19202435ba6f1b143f6b625dc5f187df1"
     end
   end
 
