@@ -7,6 +7,7 @@ class FilesCliHead < Formula
   
   def install
     ENV["GOPATH"] = buildpath
+    ENV["CGO_ENABLED"] = "1"
     bin_path = buildpath/"src/github.com/Files-com/files-cli"
     bin_path.install Dir["*"]
     Language::Go.stage_deps resources, buildpath/"src"
