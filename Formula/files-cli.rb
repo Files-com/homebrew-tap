@@ -5,21 +5,21 @@
 class FilesCli < Formula
   desc "Files.com command-line interface"
   homepage "https://files.com/"
-  version "1.3.3"
+  version "1.3.4"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/Files-com/files-cli/releases/download/v1.3.3/files-cli_macOS_ARM64.tar.gz"
-      sha256 "69cdddeccc84914e6c27fc2322a8ab75783d65afd34958276f7b3ad05ae84907"
+    if Hardware::CPU.intel?
+      url "https://github.com/Files-com/files-cli/releases/download/v1.3.4/files-cli_macOS_64bit.tar.gz"
+      sha256 "4d65178f63d2f281be6387a324673ecd6fcfa9bc5f5c94250306f8e51da0a7bf"
 
       def install
         bin.install "files-cli"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/Files-com/files-cli/releases/download/v1.3.3/files-cli_macOS_64bit.tar.gz"
-      sha256 "8e22b2ec3dabc227c56501cd32f2ae42c8772969d3743099c3a3e63fac0e2aae"
+    if Hardware::CPU.arm?
+      url "https://github.com/Files-com/files-cli/releases/download/v1.3.4/files-cli_macOS_ARM64.tar.gz"
+      sha256 "eeffe88b0fe6134294ff93d3579929e65558106fa845c883a90314978bdccfd3"
 
       def install
         bin.install "files-cli"
@@ -29,16 +29,16 @@ class FilesCli < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Files-com/files-cli/releases/download/v1.3.3/files-cli_Linux_ARM64.tar.gz"
-      sha256 "8d6045dd828ca64bbd18aa2f45523a325cb4eb70ab7b69b4de2a138bee917024"
+      url "https://github.com/Files-com/files-cli/releases/download/v1.3.4/files-cli_Linux_ARM64.tar.gz"
+      sha256 "2cc740651d3be100e705ad06aef302ee57f74f11416416ce3c6e07a14f4dd6ac"
 
       def install
         bin.install "files-cli"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/Files-com/files-cli/releases/download/v1.3.3/files-cli_Linux_64bit.tar.gz"
-      sha256 "1069b715c9add456099cf8c1fa6fbd60a901b4a431e3ffeacf7892ac9e3f4d00"
+      url "https://github.com/Files-com/files-cli/releases/download/v1.3.4/files-cli_Linux_64bit.tar.gz"
+      sha256 "73ec4a2bfbdfbe59643938ecbfb54f625383650123b517e792a8b10e41c5eaf2"
 
       def install
         bin.install "files-cli"
