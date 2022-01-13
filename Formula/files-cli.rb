@@ -5,21 +5,21 @@
 class FilesCli < Formula
   desc "Files.com command-line interface"
   homepage "https://files.com/"
-  version "1.3.10"
+  version "1.3.12"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/Files-com/files-cli/releases/download/v1.3.10/files-cli_macOS_ARM64.tar.gz"
-      sha256 "ce63bcf01c764e15394a511d705fb0f9fa4e85f10343dfbbf744412b88f674f3"
+      url "https://github.com/Files-com/files-cli/releases/download/v1.3.12/files-cli_macOS_ARM64.tar.gz"
+      sha256 "2e608d4afa664a3f16f774455ffb6584222c9e6a6cc3832b237cd0fb06dd8ec4"
 
       def install
         bin.install "files-cli"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/Files-com/files-cli/releases/download/v1.3.10/files-cli_macOS_64bit.tar.gz"
-      sha256 "bfecda1ea9da4d4c213c0df33d039875df0d87de16716b6fd05a839d2206da73"
+      url "https://github.com/Files-com/files-cli/releases/download/v1.3.12/files-cli_macOS_64bit.tar.gz"
+      sha256 "bc1b619d80592b70f0f85d7bc35a8e43a16ae103c64585c3c262ac286e53154f"
 
       def install
         bin.install "files-cli"
@@ -28,17 +28,17 @@ class FilesCli < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Files-com/files-cli/releases/download/v1.3.10/files-cli_Linux_ARM64.tar.gz"
-      sha256 "2d497d516ee7e3379644e47cceff3f334e0acc7ebb9407b06c14eefbf056e082"
+    if Hardware::CPU.intel?
+      url "https://github.com/Files-com/files-cli/releases/download/v1.3.12/files-cli_Linux_64bit.tar.gz"
+      sha256 "2ee0c7045168e88cd2ec298df57726f4c6980fafb0c05254403ce2869c1f3c47"
 
       def install
         bin.install "files-cli"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/Files-com/files-cli/releases/download/v1.3.10/files-cli_Linux_64bit.tar.gz"
-      sha256 "d03e2ba5403abfe416e3aa53fe03521fc5cd9fc8ca815ac9dee4d8b48bb736b2"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/Files-com/files-cli/releases/download/v1.3.12/files-cli_Linux_ARM64.tar.gz"
+      sha256 "290238156ec12b43f62feab507f735a09f9cf381806049bd0865b894c044e1b9"
 
       def install
         bin.install "files-cli"
