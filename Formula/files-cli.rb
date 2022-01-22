@@ -5,21 +5,21 @@
 class FilesCli < Formula
   desc "Files.com command-line interface"
   homepage "https://files.com/"
-  version "1.3.13"
+  version "1.3.14"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/Files-com/files-cli/releases/download/v1.3.13/files-cli_macOS_ARM64.tar.gz"
-      sha256 "afe71505b4017e253b9bdacc8adee70782a35a2e6f9d98ae9ed05ef5f3f97b09"
+      url "https://github.com/Files-com/files-cli/releases/download/v1.3.14/files-cli_macOS_ARM64.tar.gz"
+      sha256 "dfd628fc625fe6dffd53b3e9d5f430fd8fe3775bbe9f8a59a6a25757594018eb"
 
       def install
         bin.install "files-cli"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/Files-com/files-cli/releases/download/v1.3.13/files-cli_macOS_64bit.tar.gz"
-      sha256 "9e108f3faf1643c605c3ab7b5ea81b0c998dad5228e1fd59548b818f91c5d5cd"
+      url "https://github.com/Files-com/files-cli/releases/download/v1.3.14/files-cli_macOS_64bit.tar.gz"
+      sha256 "8323ef8d450658b3f095558b35c2435a95e0e9cdbd240eb3ef37a1b7341b83ac"
 
       def install
         bin.install "files-cli"
@@ -29,16 +29,16 @@ class FilesCli < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Files-com/files-cli/releases/download/v1.3.13/files-cli_Linux_ARM64.tar.gz"
-      sha256 "478b33b30dbcdef0efd2bd19cab6e4175b4145a6c77a97c94a96808bbabf1b59"
+      url "https://github.com/Files-com/files-cli/releases/download/v1.3.14/files-cli_Linux_ARM64.tar.gz"
+      sha256 "dbb62fa65d439ab50f2776dbf5418d4299a7c71384d76a3b2fc835b29160e7ec"
 
       def install
         bin.install "files-cli"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/Files-com/files-cli/releases/download/v1.3.13/files-cli_Linux_64bit.tar.gz"
-      sha256 "478ac4d0bfffad12a6711345300e57c777701eb113f407ac8a341f068ecb1627"
+      url "https://github.com/Files-com/files-cli/releases/download/v1.3.14/files-cli_Linux_64bit.tar.gz"
+      sha256 "e314c51aabfe93618e7c95f606acd99ab1de4df8b9280c30a82f31e78bebf57f"
 
       def install
         bin.install "files-cli"
