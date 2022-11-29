@@ -5,29 +5,29 @@
 class FilesCli < Formula
   desc "Files.com command-line interface"
   homepage "https://files.com/"
-  version "2.1.31"
+  version "2.1.32"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/Files-com/files-cli/releases/download/v2.1.31/files-cli_macOS_ARM64.tar.gz"
-      sha256 "a81b2336f94c7dba717c70a187a3e08304d9cd93f0d21db4fb62c5be771407fc"
+      url "https://github.com/Files-com/files-cli/releases/download/v2.1.32/files-cli_macOS_ARM64.tar.gz"
+      sha256 "b517eb9550f12ea7ce97363783aa7d32665987cefbad3cd8459a25452046a3bc"
 
       def install
         bin.install "files-cli"
-        bash_completion.install "completions/files-cli.bash"
-        zsh_completion.install "completions/files-cli.zsh"
+        bash_completion.install "completions/files-cli.bash" => "files-cli"
+        zsh_completion.install "completions/files-cli.zsh" => "_files-cli"
         fish_completion.install "completions/files-cli.fish"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/Files-com/files-cli/releases/download/v2.1.31/files-cli_macOS_64bit.tar.gz"
-      sha256 "19254bd3d4afbd59744de9710090e79d7b587e6710a1e221220434682cb3c5bd"
+      url "https://github.com/Files-com/files-cli/releases/download/v2.1.32/files-cli_macOS_64bit.tar.gz"
+      sha256 "9d59dca9124e39cbbb7fa02044cddd3bc62050d8c6bd73c486aad1bd19cfc7d2"
 
       def install
         bin.install "files-cli"
-        bash_completion.install "completions/files-cli.bash"
-        zsh_completion.install "completions/files-cli.zsh"
+        bash_completion.install "completions/files-cli.bash" => "files-cli"
+        zsh_completion.install "completions/files-cli.zsh" => "_files-cli"
         fish_completion.install "completions/files-cli.fish"
       end
     end
@@ -35,35 +35,35 @@ class FilesCli < Formula
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/Files-com/files-cli/releases/download/v2.1.31/files-cli_Linux_ARM6.tar.gz"
-      sha256 "42f146606b9856648f9164c13b8e8babdd7018c612b9760ef155c6748dd753bf"
+      url "https://github.com/Files-com/files-cli/releases/download/v2.1.32/files-cli_Linux_ARM6.tar.gz"
+      sha256 "964f31b4c2eb248d5e7405ff5c9d9a2f54d088f9ecfa7401b63657f8ca780118"
 
       def install
         bin.install "files-cli"
-        bash_completion.install "completions/files-cli.bash"
-        zsh_completion.install "completions/files-cli.zsh"
+        bash_completion.install "completions/files-cli.bash" => "files-cli"
+        zsh_completion.install "completions/files-cli.zsh" => "_files-cli"
         fish_completion.install "completions/files-cli.fish"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Files-com/files-cli/releases/download/v2.1.31/files-cli_Linux_ARM64.tar.gz"
-      sha256 "41e56c9d0531fbaf3c90ce28675c736499aa5e54c356a6f8acd07ff40c9232ab"
+      url "https://github.com/Files-com/files-cli/releases/download/v2.1.32/files-cli_Linux_ARM64.tar.gz"
+      sha256 "777a95f7c3827cc89218be63ae73d563115c22044b3fea589ef57c93bbf59651"
 
       def install
         bin.install "files-cli"
-        bash_completion.install "completions/files-cli.bash"
-        zsh_completion.install "completions/files-cli.zsh"
+        bash_completion.install "completions/files-cli.bash" => "files-cli"
+        zsh_completion.install "completions/files-cli.zsh" => "_files-cli"
         fish_completion.install "completions/files-cli.fish"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/Files-com/files-cli/releases/download/v2.1.31/files-cli_Linux_64bit.tar.gz"
-      sha256 "0d5e6f528f512d5d6e16bec53534f826cae12dd82a641034dcdd64a7d6f878dd"
+      url "https://github.com/Files-com/files-cli/releases/download/v2.1.32/files-cli_Linux_64bit.tar.gz"
+      sha256 "1d54a10005a73e7d34c58f2dc19eac906cfcac732b95c79b8228863f88030a3e"
 
       def install
         bin.install "files-cli"
-        bash_completion.install "completions/files-cli.bash"
-        zsh_completion.install "completions/files-cli.zsh"
+        bash_completion.install "completions/files-cli.bash" => "files-cli"
+        zsh_completion.install "completions/files-cli.zsh" => "_files-cli"
         fish_completion.install "completions/files-cli.fish"
       end
     end
