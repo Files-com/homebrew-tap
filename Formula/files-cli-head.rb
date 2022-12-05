@@ -13,6 +13,7 @@ class FilesCliHead < Formula
     Language::Go.stage_deps resources, buildpath/"src"
     cd bin_path do
       system "go", "mod", "tidy"
+      system "go", "mod", "download"
       system "go", "build", "-o", bin/"files-cli", "."
     end
   end
