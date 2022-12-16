@@ -70,7 +70,7 @@ class FilesCli < Formula
   end
 
   def post_install
-    system %Q[files-cli changelog "$(files-cli -v)" --ignore-version-check]
+    puts `files-cli changelog "$(files-cli -v)" --ignore-version-check`
   end
 
   test do
