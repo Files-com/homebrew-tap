@@ -14,7 +14,7 @@ class FilesCli < Formula
       sha256 "8046a28fe0a928337646fdfdaf6e1ede85d35a4f4957a572188203b7d2c2e581"
 
       def install
-        @last_version = `files-cli -v --ignore-version-check`.chomp rescue ""
+        @last_version = `files-cli -v`.chomp.split("\n").last rescue ""
         bin.install "files-cli"
         bash_completion.install "completions/files-cli.bash" => "files-cli"
         zsh_completion.install "completions/files-cli.zsh" => "_files-cli"
