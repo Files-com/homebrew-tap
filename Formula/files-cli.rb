@@ -5,13 +5,13 @@
 class FilesCli < Formula
   desc "Files.com command-line interface"
   homepage "https://files.com/"
-  version "2.2.10"
+  version "2.2.11"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/Files-com/files-cli/releases/download/v2.2.10/files-cli_macOS_ARM64.tar.gz"
-      sha256 "cbf2ec9a5284f2084caf4251366aeabfaf3f36afea3b6ccd241e61070291d8ae"
+      url "https://github.com/Files-com/files-cli/releases/download/v2.2.11/files-cli_macOS_ARM64.tar.gz"
+      sha256 "8046a28fe0a928337646fdfdaf6e1ede85d35a4f4957a572188203b7d2c2e581"
 
       def install
         bin.install "files-cli"
@@ -21,8 +21,8 @@ class FilesCli < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/Files-com/files-cli/releases/download/v2.2.10/files-cli_macOS_64bit.tar.gz"
-      sha256 "082d9fdda214cf6110d8a95fcaf91e8b8fd478fa67335cc62ae7ab544ebf563e"
+      url "https://github.com/Files-com/files-cli/releases/download/v2.2.11/files-cli_macOS_64bit.tar.gz"
+      sha256 "4fff98d481462d6ddf33d258c37e41d173057339b90a8cdf2b392ca0987c0260"
 
       def install
         bin.install "files-cli"
@@ -35,8 +35,8 @@ class FilesCli < Formula
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/Files-com/files-cli/releases/download/v2.2.10/files-cli_Linux_ARM6.tar.gz"
-      sha256 "8da35d92153c73a2c3bd400665e8b8d19649af97f34560ba0eb846527932e6e7"
+      url "https://github.com/Files-com/files-cli/releases/download/v2.2.11/files-cli_Linux_ARM6.tar.gz"
+      sha256 "2017b7404164601c70ebe2331d8cfd58239978377bf5cd57f5d6c5865e1ba396"
 
       def install
         bin.install "files-cli"
@@ -46,8 +46,8 @@ class FilesCli < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Files-com/files-cli/releases/download/v2.2.10/files-cli_Linux_ARM64.tar.gz"
-      sha256 "5bfa9f1e271122f2b1ac4f3b79c2bc702c1a01409b36cac5eb83119bf0bd5bf7"
+      url "https://github.com/Files-com/files-cli/releases/download/v2.2.11/files-cli_Linux_ARM64.tar.gz"
+      sha256 "432b2ddde4a96d4388e6cca6318c2f021a0eea93269d6dd32c295c307231f2e2"
 
       def install
         bin.install "files-cli"
@@ -57,8 +57,8 @@ class FilesCli < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/Files-com/files-cli/releases/download/v2.2.10/files-cli_Linux_64bit.tar.gz"
-      sha256 "aa341e58971dc8cc54c576a8c37c9c2bae8003f80224a0c9f21e0cf88b2fca16"
+      url "https://github.com/Files-com/files-cli/releases/download/v2.2.11/files-cli_Linux_64bit.tar.gz"
+      sha256 "339cde96422e306656e9658b84c4fc20b8646216d8c5a0270e5c13b8475d2abe"
 
       def install
         bin.install "files-cli"
