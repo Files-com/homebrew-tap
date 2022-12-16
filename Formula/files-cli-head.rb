@@ -20,7 +20,7 @@ class FilesCliHead < Formula
   end
   
   def post_install
-    current_version = `#{bin}/files-cli --v --ignore-version-check`
+    current_version = `#{bin}/files-cli -v --ignore-version-check`
     puts `#{bin}/files-cli changelog "#{[@last_version, current_version].reject(&:nil?).join("..")}" --ignore-version-check`
   end
   
