@@ -21,7 +21,7 @@ class FilesCliHead < Formula
   
   def post_install
     current_version = `#{bin}/files-cli -v --ignore-version-check`
-    puts `#{bin}/files-cli changelog "#{[@last_version, current_version].reject(&:nil?).join("..")}" --ignore-version-check`
+    puts `#{bin}/files-cli changelog "#{[@last_version, current_version].uniq.reject(&:nil?).join("..")}" --ignore-version-check`
   end
   
   test do
