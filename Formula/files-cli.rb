@@ -14,6 +14,7 @@ class FilesCli < Formula
       sha256 "7e0dc963672bca3c5ef83b9160857cfc6c15e953c242363f60baca0141cb4cff"
 
       def install
+        @last_version = JSON.parse(`brew info files-cli --json`, symbolize_names: true).first[:linked_keg] rescue nil
         bin.install "files-cli"
         bash_completion.install "completions/files-cli.bash" => "files-cli"
         zsh_completion.install "completions/files-cli.zsh" => "_files-cli"
@@ -25,6 +26,7 @@ class FilesCli < Formula
       sha256 "bdab49f704a61108f6be6bbfd044636911e6b4f66c08e92ad8ce391430727d81"
 
       def install
+        @last_version = JSON.parse(`brew info files-cli --json`, symbolize_names: true).first[:linked_keg] rescue nil
         bin.install "files-cli"
         bash_completion.install "completions/files-cli.bash" => "files-cli"
         zsh_completion.install "completions/files-cli.zsh" => "_files-cli"
@@ -39,6 +41,7 @@ class FilesCli < Formula
       sha256 "2d252a60cf19a61eac78c6dd6f939b94fb1bba979c924cc1db5d18c335a8f189"
 
       def install
+        @last_version = JSON.parse(`brew info files-cli --json`, symbolize_names: true).first[:linked_keg] rescue nil
         bin.install "files-cli"
         bash_completion.install "completions/files-cli.bash" => "files-cli"
         zsh_completion.install "completions/files-cli.zsh" => "_files-cli"
@@ -50,6 +53,7 @@ class FilesCli < Formula
       sha256 "36e3d00305483e6d9db7808161a1469a2c549756fd53ddc4ffbf200f3d60ab1d"
 
       def install
+        @last_version = JSON.parse(`brew info files-cli --json`, symbolize_names: true).first[:linked_keg] rescue nil
         bin.install "files-cli"
         bash_completion.install "completions/files-cli.bash" => "files-cli"
         zsh_completion.install "completions/files-cli.zsh" => "_files-cli"
@@ -61,6 +65,7 @@ class FilesCli < Formula
       sha256 "c1cbf2e57becd0d9716bb5ba792cbde4c8961609d904c92dcfdb1c26afa60d8d"
 
       def install
+        @last_version = JSON.parse(`brew info files-cli --json`, symbolize_names: true).first[:linked_keg] rescue nil
         bin.install "files-cli"
         bash_completion.install "completions/files-cli.bash" => "files-cli"
         zsh_completion.install "completions/files-cli.zsh" => "_files-cli"
@@ -70,7 +75,7 @@ class FilesCli < Formula
   end
 
   def post_install
-    puts `#{bin}/files-cli changelog "$(#{bin}/files-cli -v)" --ignore-version-check`
+    puts `#{bin}/files-cli changelog #{@last_version ? @last_version + '...'}"$(#{bin}/files-cli -v)" --ignore-version-check`
   end
 
   test do
