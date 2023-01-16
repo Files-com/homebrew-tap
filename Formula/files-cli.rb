@@ -5,16 +5,15 @@
 class FilesCli < Formula
   desc "Files.com command-line interface"
   homepage "https://files.com/"
-  version "2.3.10"
+  version "2.3.11"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/Files-com/files-cli/releases/download/v2.3.10/files-cli_macOS_ARM64.tar.gz"
-      sha256 "7e0dc963672bca3c5ef83b9160857cfc6c15e953c242363f60baca0141cb4cff"
+      url "https://github.com/Files-com/files-cli/releases/download/v2.3.11/files-cli_macOS_ARM64.tar.gz"
+      sha256 "0abde3d4448da3368f3152dde735edc964aff64c05a3a9e3de4490a56ed1448b"
 
       def install
-        @last_version = JSON.parse(`brew info files-cli --json`, symbolize_names: true).first[:linked_keg] rescue nil
         bin.install "files-cli"
         bash_completion.install "completions/files-cli.bash" => "files-cli"
         zsh_completion.install "completions/files-cli.zsh" => "_files-cli"
@@ -22,11 +21,10 @@ class FilesCli < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/Files-com/files-cli/releases/download/v2.3.10/files-cli_macOS_64bit.tar.gz"
-      sha256 "bdab49f704a61108f6be6bbfd044636911e6b4f66c08e92ad8ce391430727d81"
+      url "https://github.com/Files-com/files-cli/releases/download/v2.3.11/files-cli_macOS_64bit.tar.gz"
+      sha256 "38a4bc7ccf28a63d81190f6186b101d268b43eb53b9ac713ee1964bdcde892ce"
 
       def install
-        @last_version = JSON.parse(`brew info files-cli --json`, symbolize_names: true).first[:linked_keg] rescue nil
         bin.install "files-cli"
         bash_completion.install "completions/files-cli.bash" => "files-cli"
         zsh_completion.install "completions/files-cli.zsh" => "_files-cli"
@@ -37,11 +35,10 @@ class FilesCli < Formula
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/Files-com/files-cli/releases/download/v2.3.10/files-cli_Linux_ARM6.tar.gz"
-      sha256 "2d252a60cf19a61eac78c6dd6f939b94fb1bba979c924cc1db5d18c335a8f189"
+      url "https://github.com/Files-com/files-cli/releases/download/v2.3.11/files-cli_Linux_ARM6.tar.gz"
+      sha256 "7dea642f6725b1660d16429aa1960606aea20cdf7cba6e281b4e40d141b72f0e"
 
       def install
-        @last_version = JSON.parse(`brew info files-cli --json`, symbolize_names: true).first[:linked_keg] rescue nil
         bin.install "files-cli"
         bash_completion.install "completions/files-cli.bash" => "files-cli"
         zsh_completion.install "completions/files-cli.zsh" => "_files-cli"
@@ -49,11 +46,10 @@ class FilesCli < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Files-com/files-cli/releases/download/v2.3.10/files-cli_Linux_ARM64.tar.gz"
-      sha256 "36e3d00305483e6d9db7808161a1469a2c549756fd53ddc4ffbf200f3d60ab1d"
+      url "https://github.com/Files-com/files-cli/releases/download/v2.3.11/files-cli_Linux_ARM64.tar.gz"
+      sha256 "85807f332af94399d71af5ad07bac6fed269c76b94837d9a7bbd440ee540c807"
 
       def install
-        @last_version = JSON.parse(`brew info files-cli --json`, symbolize_names: true).first[:linked_keg] rescue nil
         bin.install "files-cli"
         bash_completion.install "completions/files-cli.bash" => "files-cli"
         zsh_completion.install "completions/files-cli.zsh" => "_files-cli"
@@ -61,11 +57,10 @@ class FilesCli < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/Files-com/files-cli/releases/download/v2.3.10/files-cli_Linux_64bit.tar.gz"
-      sha256 "c1cbf2e57becd0d9716bb5ba792cbde4c8961609d904c92dcfdb1c26afa60d8d"
+      url "https://github.com/Files-com/files-cli/releases/download/v2.3.11/files-cli_Linux_64bit.tar.gz"
+      sha256 "6856b3a16ca604da657fb9d1c47867ca50f5633e1c66df91dbbc9f04cfb33e27"
 
       def install
-        @last_version = JSON.parse(`brew info files-cli --json`, symbolize_names: true).first[:linked_keg] rescue nil
         bin.install "files-cli"
         bash_completion.install "completions/files-cli.bash" => "files-cli"
         zsh_completion.install "completions/files-cli.zsh" => "_files-cli"
@@ -75,7 +70,7 @@ class FilesCli < Formula
   end
 
   def post_install
-    puts `#{bin}/files-cli changelog #{@last_version ? @last_version + '...' : ''}"$(#{bin}/files-cli -v)" --ignore-version-check`
+    puts `#{bin}/files-cli changelog "$(#{bin}/files-cli -v)" --ignore-version-check`
   end
 
   test do
