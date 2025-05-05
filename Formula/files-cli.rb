@@ -5,13 +5,13 @@
 class FilesCli < Formula
   desc "Files.com command-line interface"
   homepage "https://files.com/"
-  version "2.13.284"
+  version "2.13.285"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/Files-com/files-cli/releases/download/v2.13.284/files-cli_macOS_64bit.tar.gz"
-      sha256 "55a6304573c5d5c7a80b53bfb8a7796a25ed86efff5a5fe00ef11b4f77417ddc"
+      url "https://github.com/Files-com/files-cli/releases/download/v2.13.285/files-cli_macOS_64bit.tar.gz"
+      sha256 "f5804852a316d70a19ceecf82781e12622148a30aeeee7e3a07760065399016a"
 
       def install
         @last_version = JSON.parse(`brew info files-cli --json`, symbolize_names: true).first[:linked_keg] rescue nil
@@ -22,8 +22,8 @@ class FilesCli < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/Files-com/files-cli/releases/download/v2.13.284/files-cli_macOS_arm64.tar.gz"
-      sha256 "2fbfd8c3ca0dc4aa139f5d5f49e54bf39a3f60e07f857d2307540017c67a623c"
+      url "https://github.com/Files-com/files-cli/releases/download/v2.13.285/files-cli_macOS_arm64.tar.gz"
+      sha256 "e95bfcdc28b543f54df3dfd6a74d971f680eadf23abb232f792f416f6cc1e22f"
 
       def install
         @last_version = JSON.parse(`brew info files-cli --json`, symbolize_names: true).first[:linked_keg] rescue nil
@@ -37,8 +37,8 @@ class FilesCli < Formula
 
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/Files-com/files-cli/releases/download/v2.13.284/files-cli_linux_64bit.tar.gz"
-      sha256 "be57db08dff7825d8e076dfda6e75efba0f139654d8495a8d75b05935b41a3e8"
+      url "https://github.com/Files-com/files-cli/releases/download/v2.13.285/files-cli_linux_64bit.tar.gz"
+      sha256 "7924d5db0e868c00aff499d434523191cb4e307b2e402d7ad508a27111db1bf7"
       def install
         @last_version = JSON.parse(`brew info files-cli --json`, symbolize_names: true).first[:linked_keg] rescue nil
         bin.install "files-cli"
@@ -48,8 +48,8 @@ class FilesCli < Formula
       end
     end
     if Hardware::CPU.arm? and !Hardware::CPU.is_64_bit?
-      url "https://github.com/Files-com/files-cli/releases/download/v2.13.284/files-cli_linux_arm6.tar.gz"
-      sha256 "ce0b0c6e29d1725b27cc7f3e69e0e86ad9409511d355ea7f4fa08cde1e55a37a"
+      url "https://github.com/Files-com/files-cli/releases/download/v2.13.285/files-cli_linux_arm6.tar.gz"
+      sha256 "52880532b786f4602ce11966fd64dd2dabe7d15c82f5668bf5dbc903655604e9"
       def install
         @last_version = JSON.parse(`brew info files-cli --json`, symbolize_names: true).first[:linked_keg] rescue nil
         bin.install "files-cli"
@@ -59,8 +59,8 @@ class FilesCli < Formula
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/Files-com/files-cli/releases/download/v2.13.284/files-cli_linux_arm64.tar.gz"
-      sha256 "80dacf67b81ecb47c03671fb6223dc8ee02320f8dc6fbca4076fcc30652101b0"
+      url "https://github.com/Files-com/files-cli/releases/download/v2.13.285/files-cli_linux_arm64.tar.gz"
+      sha256 "21b660ca6f514e38e2017be375d8443edbed717472399e2c81f20bec192472c0"
       def install
         @last_version = JSON.parse(`brew info files-cli --json`, symbolize_names: true).first[:linked_keg] rescue nil
         bin.install "files-cli"
